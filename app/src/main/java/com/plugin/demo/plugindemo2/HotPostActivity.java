@@ -90,6 +90,7 @@ public class HotPostActivity extends Activity {
         postAdapter = new PostAdapter(postList, this);
         postAdapter.setListener((view, i) -> {
             Intent intent = new Intent();
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.setClassName("com.plugin.demo.plugindemo2.post_details", "com.plugin.demo" +
                     ".plugindemo2.post_details.PostDetailActivity");
             intent.putExtra("postId", postList.get(i).getObjectId());
